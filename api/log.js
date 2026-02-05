@@ -28,7 +28,8 @@ export default async function handler(req, res) {
     })
   });
 
-  res.status(204).end(); 
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.status(200).end('<!DOCTYPE html><html><head><title></title></head><body></body></html>');
 }
 
 
