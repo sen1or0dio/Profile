@@ -18,7 +18,6 @@ export default async function handler(req, res) {
 
   const message = `🆕 Новый посетитель!\nIP: ${ip}\n📍 Местоположение: ${location}\n🕒 ${new Date().toLocaleString('ru-RU')}`;
 
-  // Отправка в Telegram
   const telegramUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
   await fetch(telegramUrl, {
     method: 'POST',
@@ -31,4 +30,6 @@ export default async function handler(req, res) {
 
   res.status(200).json({ ok: true });
 }
+
+
 
